@@ -5,7 +5,7 @@ Aplicacion Front End en Angular 10, implementado lazy loading e integrado al ser
 - Para utilizar este proyecto se necesita tener las siguientes herramientas
 
 
-- Instalar npm y node js en la version
+- Instalar npm y node js
 
 ```sh
 
@@ -44,3 +44,4 @@ npm start
 # Consideraciones
 
 - Los servicios estan apuntando al servicio API con el siguiente dominio https://localhost:44333/
+- Tener el servicio de back end corriendo
