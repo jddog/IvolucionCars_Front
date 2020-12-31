@@ -1,0 +1,117 @@
+<div class="text-center p-4">
+  <h4>Registrar vehículo</h4>
+  <div class="d-flex justify-content-center mt-4">
+    <div class="card w-50">
+      <div class="card-body">
+        <form>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Tipo:</label>
+            <select
+              class="form-select"
+              name="tipo"
+              [(ngModel)]="carModel.codigoTipo"
+            >
+              <option
+                *ngFor="let tipoVehiculo of tiposVehiculo"
+                [ngValue]="tipoVehiculo.Codigo"
+              >
+                {{ tipoVehiculo.Nombre }}
+              </option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Marca:</label>
+            <select
+              class="form-select"
+              name="marca"
+              [(ngModel)]="carModel.codigoMarca"
+            >
+              <option
+                *ngFor="let marcaVehiculo of marcasVehiculo"
+                [ngValue]="marcaVehiculo.Codigo"
+              >
+                {{ marcaVehiculo.Nombre }}
+              </option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Modelo</label>
+            <input
+              type="text"
+              class="form-control"
+              name="Modelo"
+              id="Modelo"
+              required
+              [(ngModel)]="carModel.Modelo"
+            />
+          </div>
+
+          <div class="row">
+            <div class="mb-3 col-6">
+              <label class="form-label">Cilindraje</label>
+              <input
+                type="number"
+                class="form-control"
+                id="Cilindraje"
+                name="cilindraje"
+                required
+                [(ngModel)]="carModel.Cilindraje"
+              />
+            </div>
+
+            <div class="mb-3 col-6">
+              <label class="form-label">Año</label>
+              <input
+                type="number"
+                class="form-control"
+                id="anno"
+                name="anno"
+                [(ngModel)]="carModel.Anno"
+              />
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            class="btn btn-secondary mt-3"
+            (click)="registrarVehiculo()"
+          >
+            Guardar
+          </button>
+        </form>
+
+        <div
+          *ngIf="messaggeSuccess"
+          class="alert alert-success alert-dismissible fade show mt-2"
+          role="alert"
+        >
+          {{ messaggeSuccess }}
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert"
+            aria-label="Close"
+            (click)="hiddeAlert()"
+          ></button>
+        </div>
+
+        <div
+          *ngIf="messaggeDanger"
+          class="alert alert-danger alert-dismissible fade show mt-2"
+          role="alert"
+        >
+          {{ messaggeDanger }}
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert"
+            aria-label="Close"
+            (click)="hiddeAlert()"
+          ></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

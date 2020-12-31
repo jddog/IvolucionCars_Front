@@ -1,0 +1,28 @@
+<div class="text-center p-4">
+  <h4>Tus vehículos</h4>
+  <div class="d-flex justify-content-center mt-4">
+    <table class="table table-striped w-75">
+      <thead>
+        <tr>
+          <th scope="col">Tipo</th>
+          <th scope="col">Marca</th>
+          <th scope="col">Modelo</th>
+          <th scope="col">Cilindraje</th>
+          <th scope="col">Año</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let car of cars">
+          <th scope="row">{{ car.tipoVehiculoNombre }}</th>
+          <td>{{ car.marca }}</td>
+          <td>{{ car.Modelo }}</td>
+          <td>{{ car.Cilindraje }}</td>
+          <td>{{ car.Anno }}</td>
+        </tr>
+        <label *ngIf="cars && cars.length === 0">
+          No existen registros de vehículos
+        </label>
+      </tbody>
+    </table>
+  </div>
+</div>
